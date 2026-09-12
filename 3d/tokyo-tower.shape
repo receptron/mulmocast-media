@@ -1,0 +1,558 @@
+// Tokyo Tower — 日本電波塔 (1958, Tachū Naitō)
+// Scale: 1 unit = 10 metres. Y is up. Height 333 m.
+// Main Deck 150 m, Top Deck 250 m, antenna ~79 m.
+
+background 0.78 0.86 0.93
+
+define orange (0.90 0.30 0.08)
+define white (0.96 0.94 0.90)
+define cream (0.93 0.89 0.80)
+define glass (0.16 0.30 0.40)
+define dark (0.22 0.20 0.19)
+define concrete (0.72 0.71 0.67)
+define grass (0.38 0.52 0.32)
+define warn (0.85 0.08 0.06)
+
+define paint(y) {
+    if y < 3.45 {
+        orange
+    } else {
+        if y < 5.45 {
+            white
+        } else {
+            if y < 8.7 {
+                orange
+            } else {
+                if y < 10.85 {
+                    white
+                } else {
+                    if y < 14.65 {
+                        orange
+                    } else {
+                        define k floor((y - 15.7) / 2.46)
+                        if (k % 2) = 0 {
+                            orange
+                        } else {
+                            white
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+define lowerSpan(y) {
+    define t (min 1 (max 0 (y / 14.7)))
+    define u (1 - t)
+    1.02 + 3.55 * (0.80 * u + 0.20 * u * u)
+}
+
+define upperSpan(y) {
+    define t (min 1 (max 0 ((y - 14.7) / 9.9)))
+    1.02 * (1 - t) + 0.56 * t
+}
+
+define legW(y) {
+    0.14 + 0.82 * (max 0 (1 - y / 14.7))
+}
+
+define strut(x0 y0 z0 x1 y1 z1 t col) {
+    hull {
+        color col
+        cube {
+            position x0 y0 z0
+            size t
+            color col
+        }
+        cube {
+            position x1 y1 z1
+            size t
+            color col
+        }
+    }
+}
+
+define sxOf(c) {
+    if (c = 0) or (c = 1) {
+        1
+    } else {
+        -1
+    }
+}
+
+define szOf(c) {
+    if (c = 0) or (c = 3) {
+        1
+    } else {
+        -1
+    }
+}
+
+// ------------------------------------------------
+// Park and plaza
+// ------------------------------------------------
+cylinder {
+    position 0 -0.18 0
+    size 18.5 0.28 18.5
+    color (0.30 0.42 0.26)
+}
+cylinder {
+    position 0 -0.02 0
+    size 14.2 0.08 14.2
+    color grass
+}
+cylinder {
+    position 0 0.02 0
+    size 8.4 0.06 8.4
+    color (0.62 0.63 0.58)
+}
+cylinder {
+    position 0 0.05 0
+    size 6.0 0.05 6.0
+    color (0.78 0.77 0.73)
+}
+
+// Park trees, offset from the four legs
+for k in 0 to 7 {
+    define ta (k * (pi / 4) + pi / 8)
+    define tr 7.6
+    cylinder {
+        position (tr * cos(ta)) 0.45 (tr * sin(ta))
+        size 0.16 0.90 0.16
+        color (0.38 0.24 0.12)
+    }
+    sphere {
+        position (tr * cos(ta)) 1.15 (tr * sin(ta))
+        size 0.85
+        color (0.30 0.50 0.26)
+    }
+    sphere {
+        position (tr * cos(ta) + 0.15) 1.45 (tr * sin(ta) + 0.08)
+        size 0.55
+        color (0.34 0.54 0.28)
+    }
+}
+
+// Four concrete footings
+for c in 0 to 3 {
+    define sx sxOf(c)
+    define sz szOf(c)
+    define s0 lowerSpan(0.05)
+    cube {
+        position (sx * s0) 0.14 (sz * s0)
+        size 1.40 0.34 1.40
+        color concrete
+    }
+    cube {
+        position (sx * s0) 0.40 (sz * s0)
+        size 1.00 0.22 1.00
+        color (0.60 0.58 0.54)
+    }
+}
+
+// ------------------------------------------------
+// FootTown — five-storey base building
+// ------------------------------------------------
+cube {
+    position 0 0.92 0
+    size 5.05 1.78 3.55
+    color cream
+}
+for i in 0 to 4 {
+    define wy (0.32 + i * 0.33)
+    cube {
+        position 0 wy 1.79
+        size 4.45 0.14 0.05
+        color glass
+    }
+    cube {
+        position 0 wy -1.79
+        size 4.45 0.14 0.05
+        color glass
+    }
+    cube {
+        position 2.54 wy 0
+        size 0.05 0.14 2.95
+        color glass
+    }
+    cube {
+        position -2.54 wy 0
+        size 0.05 0.14 2.95
+        color glass
+    }
+}
+cube {
+    position 0 1.84 0
+    size 5.25 0.10 3.75
+    color (0.88 0.84 0.75)
+}
+cube {
+    position 0 1.90 0
+    size 4.85 0.04 3.35
+    color (0.78 0.32 0.14)
+}
+cube {
+    position 0 0.60 1.95
+    size 1.45 1.15 0.48
+    color cream
+}
+cube {
+    position 0 0.56 2.18
+    size 0.90 0.85 0.10
+    color glass
+}
+cube {
+    position 0 1.22 2.22
+    size 1.25 0.08 0.22
+    color orange
+}
+
+// ------------------------------------------------
+// Central elevator shaft
+// ------------------------------------------------
+cube {
+    position 0 7.4 0
+    size 0.55 14.6 0.55
+    color dark
+}
+cube {
+    position 0 20.1 0
+    size 0.38 9.0 0.38
+    color dark
+}
+
+// ------------------------------------------------
+// Lower lattice — four 3-D legs + face X-bracing
+// ------------------------------------------------
+define nLow 9
+define yLow0 0.22
+define yLow1 14.55
+define dyLow ((yLow1 - yLow0) / nLow)
+
+for i in 0 to (nLow - 1) {
+    define y0 (yLow0 + i * dyLow)
+    define y1 (y0 + dyLow)
+    define ym ((y0 + y1) / 2)
+    define s0 lowerSpan(y0)
+    define s1 lowerSpan(y1)
+    define w0 legW(y0)
+    define w1 legW(y1)
+    define t (0.28 - 0.10 * (i / nLow))
+    define tb (t * 0.55)
+    define col paint(ym)
+
+    for c in 0 to 3 {
+        define sx sxOf(c)
+        define sz szOf(c)
+        // outer corner post
+        strut((sx * s0) y0 (sz * s0) (sx * s1) y1 (sz * s1) t col)
+        // inner corner post
+        strut((sx * (s0 - w0)) y0 (sz * (s0 - w0)) (sx * (s1 - w1)) y1 (sz * (s1 - w1)) (t * 0.85) col)
+        // leg side posts
+        strut((sx * (s0 - w0)) y0 (sz * s0) (sx * (s1 - w1)) y1 (sz * s1) (t * 0.8) col)
+        strut((sx * s0) y0 (sz * (s0 - w0)) (sx * s1) y1 (sz * (s1 - w1)) (t * 0.8) col)
+        // internal X of the leg
+        strut((sx * s0) y0 (sz * s0) (sx * (s1 - w1)) y1 (sz * (s1 - w1)) tb col)
+        strut((sx * (s0 - w0)) y0 (sz * (s0 - w0)) (sx * s1) y1 (sz * s1) tb col)
+        // horizontals around the leg at y1
+        strut((sx * s1) y1 (sz * s1) (sx * (s1 - w1)) y1 (sz * s1) tb col)
+        strut((sx * s1) y1 (sz * s1) (sx * s1) y1 (sz * (s1 - w1)) tb col)
+        strut((sx * (s1 - w1)) y1 (sz * (s1 - w1)) (sx * (s1 - w1)) y1 (sz * s1) tb col)
+        strut((sx * (s1 - w1)) y1 (sz * (s1 - w1)) (sx * s1) y1 (sz * (s1 - w1)) tb col)
+    }
+
+    // Face X-braces start above FootTown so the four legs stand open around it
+    if i > 1 {
+    for c in 0 to 3 {
+        define c2 ((c + 1) % 4)
+        define ax sxOf(c)
+        define az szOf(c)
+        define bx sxOf(c2)
+        define bz szOf(c2)
+        define ix0 (ax * (s0 - w0 * 0.15))
+        define iz0 (az * (s0 - w0 * 0.15))
+        define ix1 (ax * (s1 - w1 * 0.15))
+        define iz1 (az * (s1 - w1 * 0.15))
+        define jx0 (bx * (s0 - w0 * 0.15))
+        define jz0 (bz * (s0 - w0 * 0.15))
+        define jx1 (bx * (s1 - w1 * 0.15))
+        define jz1 (bz * (s1 - w1 * 0.15))
+        strut(ix0 y0 iz0 jx0 y0 jz0 tb col)
+        strut(ix1 y1 iz1 jx1 y1 jz1 tb col)
+        strut(ix0 y0 iz0 jx1 y1 jz1 tb col)
+        strut(jx0 y0 jz0 ix1 y1 iz1 tb col)
+    }
+    }
+}
+
+// ------------------------------------------------
+// Main Deck — two-storey observatory at 150 m
+// ------------------------------------------------
+cube {
+    position 0 14.68 0
+    size 2.95 0.12 2.95
+    color cream
+}
+cube {
+    position 0 15.08 0
+    size 2.78 0.68 2.78
+    color cream
+}
+cube {
+    position 0 15.10 1.41
+    size 2.45 0.42 0.06
+    color glass
+}
+cube {
+    position 0 15.10 -1.41
+    size 2.45 0.42 0.06
+    color glass
+}
+cube {
+    position 1.41 15.10 0
+    size 0.06 0.42 2.45
+    color glass
+}
+cube {
+    position -1.41 15.10 0
+    size 0.06 0.42 2.45
+    color glass
+}
+cube {
+    position 0 15.48 0
+    size 2.72 0.10 2.72
+    color (0.90 0.86 0.76)
+}
+cube {
+    position 0 15.82 0
+    size 2.62 0.58 2.62
+    color cream
+}
+cube {
+    position 0 15.84 1.33
+    size 2.28 0.36 0.06
+    color glass
+}
+cube {
+    position 0 15.84 -1.33
+    size 2.28 0.36 0.06
+    color glass
+}
+cube {
+    position 1.33 15.84 0
+    size 0.06 0.36 2.28
+    color glass
+}
+cube {
+    position -1.33 15.84 0
+    size 0.06 0.36 2.28
+    color glass
+}
+cube {
+    position 0 16.16 0
+    size 2.78 0.12 2.78
+    color (0.90 0.86 0.76)
+}
+for c in 0 to 3 {
+    define sx sxOf(c)
+    define sz szOf(c)
+    cube {
+        position (sx * 1.32) 15.42 (sz * 1.32)
+        size 0.18 1.28 0.18
+        color orange
+    }
+}
+
+// ------------------------------------------------
+// Upper lattice shaft
+// ------------------------------------------------
+define nUp 8
+define yUp0 16.22
+define yUp1 24.55
+define dyUp ((yUp1 - yUp0) / nUp)
+
+for i in 0 to (nUp - 1) {
+    define y0 (yUp0 + i * dyUp)
+    define y1 (y0 + dyUp)
+    define ym ((y0 + y1) / 2)
+    define s0 upperSpan(y0)
+    define s1 upperSpan(y1)
+    define t (0.16 - 0.03 * (i / nUp))
+    define tb (t * 0.55)
+    define col paint(ym)
+
+    for c in 0 to 3 {
+        define sx sxOf(c)
+        define sz szOf(c)
+        strut((sx * s0) y0 (sz * s0) (sx * s1) y1 (sz * s1) t col)
+    }
+    for c in 0 to 3 {
+        define c2 ((c + 1) % 4)
+        define ax sxOf(c)
+        define az szOf(c)
+        define bx sxOf(c2)
+        define bz szOf(c2)
+        strut((ax * s0) y0 (az * s0) (bx * s0) y0 (bz * s0) tb col)
+        strut((ax * s1) y1 (az * s1) (bx * s1) y1 (bz * s1) tb col)
+        strut((ax * s0) y0 (az * s0) (bx * s1) y1 (bz * s1) tb col)
+        strut((bx * s0) y0 (bz * s0) (ax * s1) y1 (az * s1) tb col)
+        // mid-face vertical
+        define mx (((ax + bx) * 0.5) * ((s0 + s1) * 0.5))
+        define mz (((az + bz) * 0.5) * ((s0 + s1) * 0.5))
+        strut(mx y0 mz mx y1 mz (tb * 0.9) col)
+    }
+}
+
+// ------------------------------------------------
+// Top Deck — observatory at 250 m
+// ------------------------------------------------
+cube {
+    position 0 24.58 0
+    size 1.48 0.10 1.48
+    color cream
+}
+cube {
+    position 0 24.92 0
+    size 1.38 0.58 1.38
+    color cream
+}
+cube {
+    position 0 24.94 0.70
+    size 1.18 0.36 0.05
+    color glass
+}
+cube {
+    position 0 24.94 -0.70
+    size 1.18 0.36 0.05
+    color glass
+}
+cube {
+    position 0.70 24.94 0
+    size 0.05 0.36 1.18
+    color glass
+}
+cube {
+    position -0.70 24.94 0
+    size 0.05 0.36 1.18
+    color glass
+}
+cube {
+    position 0 25.26 0
+    size 1.50 0.10 1.50
+    color (0.90 0.86 0.76)
+}
+for c in 0 to 3 {
+    define sx sxOf(c)
+    define sz szOf(c)
+    cube {
+        position (sx * 0.64) 24.92 (sz * 0.64)
+        size 0.12 0.62 0.12
+        color orange
+    }
+}
+
+// ------------------------------------------------
+// Antenna / broadcasting mast
+// ------------------------------------------------
+define nAnt 6
+define yAnt0 25.28
+define yAnt1 32.15
+define dyAnt ((yAnt1 - yAnt0) / nAnt)
+
+define antSpan(y) {
+    define t (min 1 (max 0 ((y - 25.28) / 6.9)))
+    0.28 * (1 - t) + 0.07 * t
+}
+
+for i in 0 to (nAnt - 1) {
+    define y0 (yAnt0 + i * dyAnt)
+    define y1 (y0 + dyAnt)
+    define ym ((y0 + y1) / 2)
+    define s0 antSpan(y0)
+    define s1 antSpan(y1)
+    define t (0.10 - 0.03 * (i / nAnt))
+    define tb (t * 0.55)
+    define col paint(ym)
+    for c in 0 to 3 {
+        define sx sxOf(c)
+        define sz szOf(c)
+        strut((sx * s0) y0 (sz * s0) (sx * s1) y1 (sz * s1) t col)
+    }
+    for c in 0 to 3 {
+        define c2 ((c + 1) % 4)
+        define ax sxOf(c)
+        define az szOf(c)
+        define bx sxOf(c2)
+        define bz szOf(c2)
+        strut((ax * s0) y0 (az * s0) (bx * s0) y0 (bz * s0) tb col)
+        strut((ax * s1) y1 (az * s1) (bx * s1) y1 (bz * s1) tb col)
+        strut((ax * s0) y0 (az * s0) (bx * s1) y1 (bz * s1) tb col)
+        strut((bx * s0) y0 (bz * s0) (ax * s1) y1 (az * s1) tb col)
+    }
+}
+
+// Antenna sphere (radome) and spike
+cylinder {
+    position 0 25.55 0
+    size 0.52 0.42 0.52
+    color orange
+}
+sphere {
+    position 0 32.22 0
+    size 0.62
+    color orange
+}
+sphere {
+    position 0 32.22 0
+    size 0.48
+    color (0.95 0.55 0.22)
+}
+cylinder {
+    position 0 32.55 0
+    size 0.12 0.32 0.12
+    color white
+}
+cone {
+    position 0 33.08 0
+    size 0.16 0.90 0.16
+    color orange
+}
+cone {
+    position 0 33.48 0
+    size 0.055 0.24 0.055
+    color white
+}
+
+// Horizontal antenna elements
+for k in 0 to 3 {
+    define ya (26.4 + k * 1.35)
+    define sa (antSpan(ya) + 0.18)
+    cube {
+        position 0 ya 0
+        size (sa * 2.4) 0.04 0.04
+        color paint(ya)
+    }
+    cube {
+        position 0 ya 0
+        size 0.04 0.04 (sa * 2.4)
+        color paint(ya)
+    }
+}
+
+// Aircraft warning lights
+sphere {
+    position 0 15.98 0
+    size 0.14
+    color warn
+}
+sphere {
+    position 0 25.30 0
+    size 0.12
+    color warn
+}
+sphere {
+    position 0 33.48 0
+    size 0.08
+    color warn
+}
