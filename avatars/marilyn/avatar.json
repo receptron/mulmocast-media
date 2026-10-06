@@ -1,0 +1,10 @@
+{
+  "format": "avatarscript-avatar/1",
+  "name": "marilyn",
+  "runtime": "mesh-avatar/1",
+  "assets": {
+    "rig": "rig.json",
+    "layers": "built/layers.json",
+    "sprites": "built/sprites/sprites.json"
+  }
+}
