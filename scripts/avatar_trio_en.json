@@ -1,0 +1,247 @@
+{
+  "$mulmocast": {
+    "version": "1.1"
+  },
+  "lang": "en",
+  "title": "Three Talking Avatars",
+  "description": "Reika, Seiya and Ken take turns, each with their own voice and talking avatar (loaded by URL from mulmocast-media). Needs the npm packages avatarscript and onnxruntime-node.",
+  "avatarParams": {
+    "position": {
+      "y": "100%",
+      "scale": "52%"
+    }
+  },
+  "speechParams": {
+    "speakers": {
+      "Reika": {
+        "provider": "openai",
+        "voiceId": "nova",
+        "displayName": {
+          "en": "Reika"
+        },
+        "avatar": {
+          "source": "https://raw.githubusercontent.com/receptron/mulmocast-media/main/avatars/reika",
+          "position": {
+            "x": "16%"
+          }
+        }
+      },
+      "Seiya": {
+        "provider": "openai",
+        "voiceId": "echo",
+        "displayName": {
+          "en": "Seiya"
+        },
+        "avatar": {
+          "source": "https://raw.githubusercontent.com/receptron/mulmocast-media/main/avatars/seiya",
+          "position": {
+            "x": "50%"
+          }
+        }
+      },
+      "Ken": {
+        "provider": "openai",
+        "voiceId": "onyx",
+        "displayName": {
+          "en": "Ken"
+        },
+        "avatar": {
+          "source": "https://raw.githubusercontent.com/receptron/mulmocast-media/main/avatars/ken",
+          "position": {
+            "x": "84%",
+            "scale": "36%"
+          }
+        }
+      }
+    }
+  },
+  "beats": [
+    {
+      "speaker": "Reika",
+      "text": "Hey, you two. We've already started. Today we're introducing talking avatars, remember?",
+      "image": {
+        "type": "markdown",
+        "markdown": [
+          "# Three Talking Avatars",
+          "",
+          "Reika · Seiya · Ken"
+        ]
+      },
+      "avatarParams": {
+        "emotion": "angry",
+        "motions": [
+          {
+            "motion": "nod",
+            "at": "Today"
+          }
+        ]
+      }
+    },
+    {
+      "speaker": "Seiya",
+      "text": "Sorry, sorry. Hi everyone, I'm Seiya. Each of the three of us was made from a single illustration.",
+      "image": {
+        "type": "markdown",
+        "markdown": [
+          "# From a single picture",
+          "",
+          "- One illustration → a talking avatar",
+          "- Blinks, mouth shapes, swaying hair"
+        ]
+      },
+      "avatarParams": {
+        "emotion": "happy",
+        "motions": [
+          {
+            "motion": "nod",
+            "at": "Hi everyone"
+          }
+        ]
+      }
+    },
+    {
+      "speaker": "Ken",
+      "text": "I'm Ken. Each of us has a different voice, too. You just give every speaker in the script a voice and an avatar.",
+      "image": {
+        "type": "markdown",
+        "markdown": [
+          "# One voice per speaker",
+          "",
+          "```json",
+          "\"Ken\": {",
+          "  \"voiceId\": \"onyx\",",
+          "  \"avatar\": { \"source\": \"https://…/avatars/ken\" }",
+          "}",
+          "```"
+        ]
+      },
+      "avatarParams": {
+        "emotion": "relaxed"
+      }
+    },
+    {
+      "speaker": "Reika",
+      "text": "So how do you match the mouth to the words? Don't tell me it just flaps open and shut at random.",
+      "image": {
+        "type": "markdown",
+        "markdown": [
+          "# What about the mouth?"
+        ]
+      },
+      "avatarParams": {
+        "emotion": "angry",
+        "motions": [
+          {
+            "motion": "tilt",
+            "at": "Don't tell me"
+          }
+        ]
+      }
+    },
+    {
+      "speaker": "Seiya",
+      "text": "It really does match. The speech is lined up against the text, and the mouth switches between its shapes as the sounds change.",
+      "image": {
+        "type": "markdown",
+        "markdown": [
+          "# Matched to the speech",
+          "",
+          "- Speech lined up against the text",
+          "- Mouth shapes: a · i · o"
+        ]
+      },
+      "avatarParams": {
+        "emotion": "happy",
+        "motions": [
+          {
+            "motion": "think",
+            "at": "lined up"
+          }
+        ]
+      }
+    },
+    {
+      "speaker": "Ken",
+      "text": "Even when we're not talking, we stay on screen. We blink, and our hair sways a little.",
+      "image": {
+        "type": "markdown",
+        "markdown": [
+          "# Even when not talking",
+          "",
+          "- Stay on screen",
+          "- Blinking, swaying hair"
+        ]
+      },
+      "avatarParams": {
+        "emotion": "neutral",
+        "motions": [
+          {
+            "motion": "nod",
+            "at": "We blink"
+          }
+        ]
+      }
+    },
+    {
+      "speaker": "Reika",
+      "text": "Hmm. Well, it's better than I expected. N-not that I'm impressed or anything.",
+      "image": {
+        "type": "markdown",
+        "markdown": [
+          "# …Not bad"
+        ]
+      },
+      "avatarParams": {
+        "emotion": "surprised",
+        "motions": [
+          {
+            "motion": "surprise",
+            "at": "better than"
+          }
+        ]
+      }
+    },
+    {
+      "speaker": "Seiya",
+      "text": "So stubborn. The avatars live in the avatars folder of the media repository, so please give them a try.",
+      "image": {
+        "type": "markdown",
+        "markdown": [
+          "# Try them",
+          "",
+          "`mulmocast-media/avatars/`",
+          "",
+          "ani · marilyn · reika · seiya · ken"
+        ]
+      },
+      "avatarParams": {
+        "emotion": "happy",
+        "motions": [
+          {
+            "motion": "giggle",
+            "at": "So stubborn"
+          }
+        ]
+      }
+    },
+    {
+      "speaker": "Ken",
+      "text": "That's all. See you in the next script.",
+      "image": {
+        "type": "markdown",
+        "markdown": [
+          "# See you"
+        ]
+      },
+      "avatarParams": {
+        "emotion": "relaxed",
+        "motions": [
+          {
+            "motion": "nod",
+            "at": "See you"
+          }
+        ]
+      }
+    }
+  ]
+}

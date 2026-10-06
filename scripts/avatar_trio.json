@@ -1,0 +1,85 @@
+{
+  "$mulmocast": { "version": "1.1" },
+  "lang": "ja",
+  "title": "三人で話すアバター",
+  "description": "Reika, Seiya and Ken take turns, each with their own voice and talking avatar (loaded by URL from mulmocast-media). Needs the npm packages avatarscript and onnxruntime-node.",
+  "avatarParams": { "position": { "y": "100%", "scale": "52%" } },
+  "speechParams": {
+    "speakers": {
+      "Reika": {
+        "provider": "openai",
+        "voiceId": "nova",
+        "displayName": { "ja": "レイカ" },
+        "avatar": { "source": "https://raw.githubusercontent.com/receptron/mulmocast-media/main/avatars/reika", "position": { "x": "16%" } }
+      },
+      "Seiya": {
+        "provider": "openai",
+        "voiceId": "echo",
+        "displayName": { "ja": "セイヤ" },
+        "avatar": { "source": "https://raw.githubusercontent.com/receptron/mulmocast-media/main/avatars/seiya", "position": { "x": "50%" } }
+      },
+      "Ken": {
+        "provider": "openai",
+        "voiceId": "onyx",
+        "displayName": { "ja": "ケン" },
+        "avatar": { "source": "https://raw.githubusercontent.com/receptron/mulmocast-media/main/avatars/ken", "position": { "x": "84%", "scale": "36%" } }
+      }
+    }
+  },
+  "beats": [
+    {
+      "speaker": "Reika",
+      "text": "ちょっと、二人とも。もう始まってるんだけど。今日は、しゃべるアバターの紹介でしょ。",
+      "image": { "type": "markdown", "markdown": ["# 三人で話すアバター", "", "レイカ ・ セイヤ ・ ケン"] },
+      "avatarParams": { "emotion": "angry", "motions": [{ "motion": "nod", "at": "今日は" }] }
+    },
+    {
+      "speaker": "Seiya",
+      "text": "ごめんごめん。みなさん、こんにちは、セイヤです。僕たち三人は、それぞれ一枚のイラストから作られたアバターなんです。",
+      "image": { "type": "markdown", "markdown": ["# 一枚の絵から", "", "- イラスト一枚 → 話すアバター", "- まばたき・口の形・髪の揺れ"] },
+      "avatarParams": { "emotion": "happy", "motions": [{ "motion": "nod", "at": "こんにちは" }] }
+    },
+    {
+      "speaker": "Ken",
+      "text": "ケンだ。声も一人ずつ違う。台本の話し手ごとに、声とアバターを決めておけばいい。",
+      "image": { "type": "markdown", "markdown": ["# 話し手ごとに", "", "```json", "\"Ken\": {", "  \"voiceId\": \"onyx\",", "  \"avatar\": { \"source\": \"https://…/avatars/ken\" }", "}", "```"] },
+      "avatarParams": { "emotion": "relaxed" }
+    },
+    {
+      "speaker": "Reika",
+      "text": "で、口の動きはどうやって合わせてるの？まさか、適当にパクパクしてるだけじゃないでしょうね。",
+      "image": { "type": "markdown", "markdown": ["# 口の動きは？"] },
+      "avatarParams": { "emotion": "angry", "motions": [{ "motion": "tilt", "at": "まさか" }] }
+    },
+    {
+      "speaker": "Seiya",
+      "text": "ちゃんと合わせてるよ。読み上げた音声と文章を照らし合わせて、あ、い、お、の口の形を切り替えているんだ。",
+      "image": { "type": "markdown", "markdown": ["# 音声に合わせて", "", "- 音声と文章を照らし合わせる", "- 口の形: あ ・ い ・ お"] },
+      "avatarParams": { "emotion": "happy", "motions": [{ "motion": "think", "at": "照らし合わせて" }] }
+    },
+    {
+      "speaker": "Ken",
+      "text": "話していない間も、俺たちは画面に残る。まばたきもするし、髪も少し揺れる。",
+      "image": { "type": "markdown", "markdown": ["# 話していないときも", "", "- 画面に残る", "- まばたき・髪の揺れ"] },
+      "avatarParams": { "emotion": "neutral", "motions": [{ "motion": "nod", "at": "まばたき" }] }
+    },
+    {
+      "speaker": "Reika",
+      "text": "ふーん。まあ、思ったよりはちゃんとしてるじゃない。べ、別に感心したわけじゃないけど。",
+      "image": { "type": "markdown", "markdown": ["# ……悪くない"] },
+      "avatarParams": { "emotion": "surprised", "motions": [{ "motion": "surprise", "at": "思ったより" }] }
+    },
+    {
+      "speaker": "Seiya",
+      "text": "素直じゃないなあ。アバターは、メディアのリポジトリの avatars フォルダーにあるので、ぜひ使ってみてください。",
+      "image": { "type": "markdown", "markdown": ["# 使ってみよう", "", "`mulmocast-media/avatars/`", "", "ani ・ marilyn ・ reika ・ seiya ・ ken"] },
+      "avatarParams": { "emotion": "happy", "motions": [{ "motion": "giggle", "at": "素直じゃない" }] }
+    },
+    {
+      "speaker": "Ken",
+      "text": "以上だ。次の台本で、また会おう。",
+      "image": { "type": "markdown", "markdown": ["# またね"] },
+      "avatarParams": { "emotion": "relaxed", "motions": [{ "motion": "nod", "at": "また会おう" }] }
+    }
+  ]
+}
