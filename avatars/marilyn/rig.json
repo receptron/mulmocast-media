@@ -2,7 +2,7 @@
   "version": 1,
   "image": {
     "width": 1684,
-    "height": 2528
+    "height": 2260
   },
   "head": {
     "cx": 820,
@@ -29,11 +29,11 @@
     "maxRoll": 0.035,
     "breathBand": [
       1700,
-      2528
+      2260
     ],
     "rollBand": [
       1600,
-      2528
+      2260
     ],
     "chest": {
       "cx": 900,
