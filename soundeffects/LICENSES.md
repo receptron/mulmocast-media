@@ -25,6 +25,9 @@ All files were downloaded on 2026-10-08 and copied unmodified, except where note
 | [`opengameart/bart-ticking-clock`](opengameart/bart-ticking-clock) | ticking clock | bart | <https://opengameart.org/content/ticking-clock> | CC0 1.0 (per OpenGameArt page) |
 | [`opengameart/antumdeluge-ticking-clock`](opengameart/antumdeluge-ticking-clock) | Ticking Clock | AntumDeluge | <https://opengameart.org/content/ticking-clock-0> | CC0 1.0 ([LICENSE.txt](opengameart/antumdeluge-ticking-clock/LICENSE.txt)) |
 | [`opengameart/cemkalyoncu-tick-and-tock`](opengameart/cemkalyoncu-tick-and-tock) | tick and tock | cemkalyoncu | <https://opengameart.org/content/tick-and-tock> | CC0 1.0 (per OpenGameArt page) |
+| [`opengameart/junkala-512-retro-sfx`](opengameart/junkala-512-retro-sfx) | The Essential Retro Video Game Sound Effects Collection [512 sounds] | Juhani Junkala (posted by SubspaceAudio) | <https://opengameart.org/content/512-sound-effects-8-bit-style> | CC0 1.0 ([INFO.txt](opengameart/junkala-512-retro-sfx/INFO.txt)) |
+| [`opengameart/ezduzziteh-boings`](opengameart/ezduzziteh-boings) | Boings | EZduzziteh | <https://opengameart.org/node/183317> | CC0 1.0 (per OpenGameArt page) |
+| [`opengameart/ezduzziteh-silly`](opengameart/ezduzziteh-silly) | Silly Sound Effects | EZduzziteh | <https://opengameart.org/node/183321> | CC0 1.0 (per OpenGameArt page) |
 
 Notes:
 
@@ -34,4 +37,10 @@ Notes:
 - bart: `ticking_clock.wav` (8-tick loop) is the page's standalone download; `tick1.wav`–`tick4.wav`
   are from `ticks.zip`, renamed from `ticking clock - tick1.wav` etc. to avoid spaces in URLs.
   The author asks for (but CC0 does not require) attribution.
-- OpenGameArt pages for bart and cemkalyoncu list CC0 but ship no license file.
+- Junkala 512: all 512 `.wav` files from the zip plus its `INFO.txt`, which
+  states the CC0 release. Folder names were lower-cased and spaces replaced with `-`
+  (`General Sounds/Positive Sounds` → `general-sounds/positive-sounds`); file names are unchanged
+  except `sfx_wpn_laser 10.wav` → `sfx_wpn_laser10b.wav` (a different sound from `sfx_wpn_laser10.wav`).
+- EZduzziteh: OpenGameArt's de-duplication suffix was dropped
+  (`bing_01_0.mp3` → `bing_01.mp3`, `blung_0.mp3` → `blung.mp3`).
+- OpenGameArt pages for bart, cemkalyoncu and EZduzziteh list CC0 but ship no license file.
