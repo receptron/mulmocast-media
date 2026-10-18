@@ -1,0 +1,17 @@
+Stable Audio 3 sound effects (5 files)
+
+Created by receptron (github.com/receptron) on 2026-10-18 with Stability AI's
+Stable Audio 3 Small SFX model (stabilityai/stable-audio-3-small-sfx). The model,
+prompt, duration, seed and step count of every file are in prompts.json.
+
+License: Creative Commons Zero, CC0 1.0 Universal
+https://creativecommons.org/publicdomain/zero/1.0/
+
+To the extent possible under law, receptron has waived all copyright and related
+or neighboring rights to these sound files. You may copy, modify, distribute and
+use them, including for commercial purposes, without asking permission.
+
+Note: the files were generated under the Stability AI Community License
+(https://stability.ai/license). That licence asks its licensee not to use model
+outputs to create or improve a foundational generative AI model. The CC0 waiver
+above covers receptron's rights in the files; it makes no statement on that term.
