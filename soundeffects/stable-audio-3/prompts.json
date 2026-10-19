@@ -1,0 +1,57 @@
+[
+  {
+    "file": "applause-s2.wav",
+    "model": "stabilityai/stable-audio-3-small-sfx",
+    "prompt": "small audience applause, about twenty people clapping in a room, then fading out",
+    "duration": 5,
+    "seed": 2,
+    "steps": 8,
+    "library": "github.com/Stability-AI/stable-audio-3 @ 77e0398",
+    "device": "cpu",
+    "generated": "2026-10-18"
+  },
+  {
+    "file": "camera-shutter-s4.wav",
+    "model": "stabilityai/stable-audio-3-small-sfx",
+    "prompt": "a single mechanical camera shutter click, DSLR, close-up, dry studio recording",
+    "duration": 1.0,
+    "seed": 4,
+    "steps": 8,
+    "library": "github.com/Stability-AI/stable-audio-3 @ 77e0398",
+    "device": "cpu",
+    "generated": "2026-10-18"
+  },
+  {
+    "file": "coin-drop-s1.wav",
+    "model": "stabilityai/stable-audio-3-small-sfx",
+    "prompt": "a single metal coin dropped onto a wooden table, one bright clink and a short rattle, then silence, close-up, dry studio recording",
+    "duration": 3,
+    "seed": 1,
+    "steps": 8,
+    "library": "github.com/Stability-AI/stable-audio-3 @ 77e0398",
+    "device": "cpu",
+    "generated": "2026-10-18"
+  },
+  {
+    "file": "page-turn-s1.wav",
+    "model": "stabilityai/stable-audio-3-small-sfx",
+    "prompt": "a single paper page of a book being turned, close-up, dry studio recording",
+    "duration": 3,
+    "seed": 1,
+    "steps": 8,
+    "library": "github.com/Stability-AI/stable-audio-3 @ 77e0398",
+    "device": "cpu",
+    "generated": "2026-10-18"
+  },
+  {
+    "file": "water-drop-s4.wav",
+    "model": "stabilityai/stable-audio-3-small-sfx",
+    "prompt": "a single water droplet falling into a still pool of water, close-up, plop",
+    "duration": 2,
+    "seed": 4,
+    "steps": 8,
+    "library": "github.com/Stability-AI/stable-audio-3 @ 77e0398",
+    "device": "cpu",
+    "generated": "2026-10-18"
+  }
+]
