@@ -1,6 +1,6 @@
-Stable Audio 3 sound effects (5 files)
+Stable Audio 3 sound effects (6 files)
 
-Created by receptron (github.com/receptron) on 2026-10-18 with Stability AI's
+Created by receptron (github.com/receptron) on 2026-10-18 (page-turn-s3.wav on 2026-10-22) with Stability AI's
 Stable Audio 3 Small SFX model (stabilityai/stable-audio-3-small-sfx). The model,
 prompt, duration, seed and step count of every file are in prompts.json.
 

@@ -154,6 +154,7 @@ released as CC0 1.0. The prompt and seed of each file are in `prompts.json`. Ste
 | `camera-shutter-s4.wav` | Camera shutter click (カシャッ) | 1.0 s |
 | `coin-drop-s1.wav` | Coin dropped on a table, a clink and a short rattle (チャリン) | 3.0 s |
 | `page-turn-s1.wav` | A book page turned (ペラッ) | 3.0 s |
+| `page-turn-s3.wav` | A book page turned, a short crisp first turn (ペラッ); mulmotutor plays its first 0.39 s | 3.0 s |
 | `water-drop-s4.wav` | A water droplet into a pool (ポチャン) | 2.0 s |
 
 ## Handy picks
