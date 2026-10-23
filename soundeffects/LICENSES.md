@@ -28,7 +28,7 @@ All files were downloaded on 2026-10-08 and copied unmodified, except where note
 | [`opengameart/junkala-512-retro-sfx`](opengameart/junkala-512-retro-sfx) | The Essential Retro Video Game Sound Effects Collection [512 sounds] | Juhani Junkala (posted by SubspaceAudio) | <https://opengameart.org/content/512-sound-effects-8-bit-style> | CC0 1.0 ([INFO.txt](opengameart/junkala-512-retro-sfx/INFO.txt)) |
 | [`opengameart/ezduzziteh-boings`](opengameart/ezduzziteh-boings) | Boings | EZduzziteh | <https://opengameart.org/node/183317> | CC0 1.0 (per OpenGameArt page) |
 | [`opengameart/ezduzziteh-silly`](opengameart/ezduzziteh-silly) | Silly Sound Effects | EZduzziteh | <https://opengameart.org/node/183321> | CC0 1.0 (per OpenGameArt page) |
-| [`stable-audio-3`](stable-audio-3) | Stable Audio 3 sound effects (5 files) | receptron, generated with Stability AI Stable Audio 3 Small SFX | [prompts.json](stable-audio-3/prompts.json) | CC0 1.0 ([License.txt](stable-audio-3/License.txt)) |
+| [`stable-audio-3`](stable-audio-3) | Stable Audio 3 sound effects (6 files) | receptron, generated with Stability AI Stable Audio 3 Small SFX | [prompts.json](stable-audio-3/prompts.json) | CC0 1.0 ([License.txt](stable-audio-3/License.txt)) |
 
 Notes:
 
@@ -45,7 +45,7 @@ Notes:
 - EZduzziteh: OpenGameArt's de-duplication suffix was dropped
   (`bing_01_0.mp3` → `bing_01.mp3`, `blung_0.mp3` → `blung.mp3`).
 - OpenGameArt pages for bart, cemkalyoncu and EZduzziteh list CC0 but ship no license file.
-- stable-audio-3: generated on 2026-10-18 (not downloaded) with `stabilityai/stable-audio-3-small-sfx`
+- stable-audio-3: generated on 2026-10-18 and 2026-10-22 (not downloaded) with `stabilityai/stable-audio-3-small-sfx`
   through github.com/Stability-AI/stable-audio-3 (commit 77e0398) on CPU, 8 steps; model, prompt,
   duration and seed per file are in `prompts.json`, so each file can be generated again. receptron
   owns the outputs under the Stability AI Community License and releases them as CC0 1.0. That

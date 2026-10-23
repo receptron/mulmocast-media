@@ -44,6 +44,17 @@
     "generated": "2026-10-18"
   },
   {
+    "file": "page-turn-s3.wav",
+    "model": "stabilityai/stable-audio-3-small-sfx",
+    "prompt": "a single paper page of a book being turned, close-up, dry studio recording",
+    "duration": 3,
+    "seed": 3,
+    "steps": 8,
+    "library": "github.com/Stability-AI/stable-audio-3 @ 77e0398",
+    "device": "cpu",
+    "generated": "2026-10-22"
+  },
+  {
     "file": "water-drop-s4.wav",
     "model": "stabilityai/stable-audio-3-small-sfx",
     "prompt": "a single water droplet falling into a still pool of water, close-up, plop",
